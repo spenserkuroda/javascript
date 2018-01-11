@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <style type = 'text/css'>
+        h1 {
+            text-align: center;
+            font-family: "Roboto", serif;
+            font-size: 40px;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: "Roboto", sans-serif;
+            font-size: 32px;
+            font-style: italic;
+            color: red;
+        }
+        div {
+            padding-top: 50px;
+            text-align: center;
+
+        }
+        #buttonPress {
+            background: red;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            font-family: "Roboto";
+            color: white;
+            font-size: 32px;
+        }
+    </style>
+
+    <script>
+        function buttonFunction(){
+            if (document.getElementById("buttonPress").style.background == 'red') {
+                document.getElementById("buttonPress").innerHTML = 'Thank You';
+                document.getElementById("buttonPress").style.background = 'green';
+                document.getElementById('subtitle').innerHTML = ' ';
+                document.getElementById('footer').innerHTML = 'THE BUTTON IS SATED';
+            }
+            else {
+                document.getElementById("buttonPress").innerHTML = 'PRESS ME';
+                document.getElementById("buttonPress").style.background = 'red';
+                document.getElementById('subtitle').innerHTML = 'Press the Button!';
+                document.getElementById('footer').innerHTML = '';
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h1> Simple Web Page Challenge </h1>
+    <h2 id='subtitle'> Press the Button! </h2>
+
+    <div>
+        <button onclick="buttonFunction()" id="buttonPress"> PRESS ME </button>
+    </div>
+
+    <h2 id = 'footer'>  </h2>
+</body>
