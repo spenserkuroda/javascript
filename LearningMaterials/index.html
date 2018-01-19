@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--TASK: Create a box that moves to a random point on the page when it is clicked.-->
+<html>
+<head>
+    <style type="text/css">
+
+        /* 4. Define the visual qualities of the box */
+        #boxyMcboxFace {
+            font: "Roboto";
+            font-size: 60px;
+            width: 400px;
+            height: 400px;
+            position: relative;
+            display: block;
+            left: 50%
+            top: 50%;
+            background-color: green;
+            margin: 10px auto;
+            }
+
+    </style>
+    <script type="text/javascript">
+
+        // 1. Create an object to use as the definition of the box
+        function BoxyMcboxMath() {
+            this.top = function() { return Math.floor(Math.random() * 100) + '%'; };
+            this.left = function() { return Math.floor(Math.random() * 100) + '%'; }
+        }
+
+        // 3. Initialize the box, and assign it to the page.
+        var box = new BoxyMcboxMath()
+        var boxId = 'boxyMcboxFace'
+
+        // 5. Create a click event handler to move the box around on the page.
+        function boxyMcboxFunction() {
+            document.getElementById(boxId).style.display = 'inline';
+            document.getElementById(boxId).style.position = 'absolute';
+            document.getElementById(boxId).style.top = box.top();
+            document.getElementById(boxId).style.left = box.left();
+            document.getElementById(boxId).innerHTML = "You can't catch me!<br> &#128526; <br> <b>I'm Boxy McBox Face!</b>"
+
+        }
+    </script>
+</head>
+<body>
+<!-- 2. Create an HTML element to contain the box data -->
+    <button onclick='boxyMcboxFunction()' id='boxyMcboxFace'> I'm a box <br> &#128578; <br><br> Click Me! </button>
+</body>
+</html>
